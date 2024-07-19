@@ -4,6 +4,13 @@ document.querySelector("#chooseImg").addEventListener('change', (evt) => {
     document.querySelector('#showChoosenImg').src = URL.createObjectURL(evt.target.files[0])
 })
 
+document.querySelector("#search").addEventListener("input", (evt) => {
+    const value = evt.target.value.toLowerCase().trim()
+    const arr = studentsArray.filter(item => item.name.includes(value) || item.email.includes(value))
+    console.log(arr);
+    renderStudents(arr, document.querySelector("#student-body"))
+})
+
 function logOut() {
     window.localStorage.clear()
     setTimeout(() => {

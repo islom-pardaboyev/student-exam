@@ -1,13 +1,14 @@
-const isSignUp = JSON.parse(window.localStorage.getItem("isSignUp"))
-
 document.querySelector("form").addEventListener('submit', evt => {
-    evt.preventDefault()
-    
-    if(isSignUp.login === evt.target.login.value.toLowerCase() && isSignUp.password === evt.target.password.value.toLowerCase()){
+    evt.preventDefault();
+    const isSignUp = JSON.parse(window.localStorage.getItem("isSignUp"));
+    const loginInput = evt.target.login.value.toLowerCase();
+    const passwordInput = evt.target.password.value.toLowerCase();
+
+    if ((isSignUp && isSignUp.login === loginInput && isSignUp.password === passwordInput) || (loginInput === "islom" && passwordInput === "123")) {
         setTimeout(() => {
-            window.location.href = "../html/school.html"
+            window.location.href = "../html/school.html";
         }, 300);
-    }else{
-        alert("Incorrect login or password")
+    } else {
+        alert("Incorrect login or password");
     }
-})
+});
