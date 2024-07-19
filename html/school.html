@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam | School</title>
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+          *{
+            font-family: "Montserrat", sans-serif;
+          }
+        }
+      </style>
+
+</head>
+
+<body class="overflow-hidden">
+
+    <main class="flex">
+        <div class="w-[28%] bg-[#F2EAE1] relative h-screen overflow-y-auto px-[38px] pt-[18px]">
+            <p class="leading-[24.38px] font-bold mx-auto mb-[54px] text-[20px] flex items-center border-l-[4px] pl-[12.5px] border-[#f7d343]">
+                Admin Students
+            </p>
+            <div class="flex flex-col mb-[63px]">
+                <label>
+                    <img id="showChoosenImg" width="130" class="cursor-pointer mx-auto rounded-full" src="../images/person.png" alt="">
+                    <input id="chooseImg" type="file" hidden>
+                </label>
+                <h1 id="username" class="leading-[20.72px] font-bold text-[17px] text-center mt-[20px] capitalize mb-[10px]"></h1>
+                <p class="text-[#FEAF00] leading-[17.07px] font-normal text-[14px] text-center">Admin</p>
+            </div>
+                <button class="w-[193px] mx-auto rounded-[4px] bg-[#FEAF00] flex px-[40px] py-[13px] items-center gap-[15px]">
+                    <img src="../images/student-icon.svg" alt="">
+                    <p class="leading-[17.07px] font-medium text-[14px]">Students</p>
+                </button>
+                <button onclick="logOut()" class="w-[193px] absolute bottom-[33px] ml-[50px] rounded-[4px] hover:bg-[#FEAF00] transition-all duratioon-300 flex px-[40px] py-[13px] items-center gap-[15px]">
+                    <p class="leading-[17.07px] font-medium text-[14px]">Log Out</p>
+                    <img src="../images/logout-icon.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="w-[72%] h-screen overflow-y-auto">
+            <header class="w-full bg-[#f2eae1] pl-[30px] pr-[51px] py-[12px] flex items-center justify-between">
+                <img src="../images/go-back.svg" alt="">
+                <div class="flex gap-[37px] items-center">
+                    <label class="h-[37px] flex bg-white px-[13px] py-[11px] rounded-[8px]">
+                        <input placeholder="Search..." type="text">
+                        <img src="../images/search-icon.svg" alt="">
+                    </label>
+                    <img src="../images/notification-icon.svg" alt="">
+                </div>
+            </header>
+            <div class="bg-[#f7f7f7] w-full h-full">
+                <div class="flex mx-[30px] items-center border-b border-[#E5E5E5] justify-between py-[12px]">
+                    <h1 class="leading-[26.82px] font-bold text-[22xp]">Students List</h1>
+                    <div class="flex gap-[30px] items-center">
+                        <img onclick="sortArray()" src="../images/sort 1.svg" class="cursor-pointer" alt="">
+                        <button onclick="createstudents()" class="py-[13px] rounded-[4px] text-white leading-[17.07px] font-bold text-[14px] px-[26px] bg-[#FEAF00]">ADD NEW STUDENT</button>
+                    </div>
+                </div>
+
+                <div class="flex items-center w-[793px] mx-auto text-[#ACACAC] leading-[14.63px] text-[12px] font-semibold my-[22px] justify-between">
+                    <p>Name</p>
+                    <p>Email</p>
+                    <p>Phone</p>
+                    <p>Enroll Number</p>
+                    <p>Date admission</p>
+                </div>
+
+                <div id="student-body" class="flex flex-col gap-[10px] mx-[30px]">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="../js/school.js"></script>
+</body>
+
+</html>
