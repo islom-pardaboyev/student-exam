@@ -30,6 +30,6 @@ document.querySelector("form").addEventListener('submit', evt => {
     console.log(studentData);
 
     setTimeout(() => {
-        window.location.href = "../html/school.html"
+        window.location.href = "../html/students.html"
     })
 })

@@ -30,6 +30,6 @@ document.querySelector("form").addEventListener('submit', (evt) => {
     window.localStorage.setItem("studentsList", JSON.stringify(list))
 
     setTimeout(() => {
-        window.location.href = "../html/school.html"
+        window.location.href = "../html/students.html"
     }, 300)
 })

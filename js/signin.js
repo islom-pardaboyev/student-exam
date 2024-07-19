@@ -6,7 +6,7 @@ document.querySelector("form").addEventListener('submit', evt => {
 
     if ((isSignUp && isSignUp.login === loginInput && isSignUp.password === passwordInput) || (loginInput === "islom" && passwordInput === "123")) {
         setTimeout(() => {
-            window.location.href = "../html/school.html";
+            window.location.href = "../html/students.html";
         }, 300);
     } else {
         alert("Incorrect login or password");

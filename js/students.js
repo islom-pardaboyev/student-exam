@@ -1,4 +1,4 @@
-document.querySelector("#username").textContent = JSON.parse(window.localStorage.getItem("isSignUp")).login
+document.querySelector("#username").textContent = JSON.parse(window.localStorage.getItem("isSignUp"))?.login || "Islom"
 
 document.querySelector("#chooseImg").addEventListener('change', (evt) => {
     document.querySelector('#showChoosenImg').src = URL.createObjectURL(evt.target.files[0])
@@ -7,7 +7,6 @@ document.querySelector("#chooseImg").addEventListener('change', (evt) => {
 document.querySelector("#search").addEventListener("input", (evt) => {
     const value = evt.target.value.toLowerCase().trim()
     const arr = studentsArray.filter(item => item.name.includes(value) || item.email.includes(value))
-    console.log(arr);
     renderStudents(arr, document.querySelector("#student-body"))
 })
 
@@ -76,3 +75,4 @@ function deleteStudent(id) {
 
 const studentsArray = JSON.parse(window.localStorage.getItem("studentsList")) || []
 renderStudents(studentsArray, document.querySelector("#student-body"))
+
