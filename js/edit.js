@@ -4,6 +4,10 @@ function logOut() {
         window.location.href = "../index.html"
     }, 300)
 }
+document.getElementById("chooseImg").addEventListener("change", function(evt) {
+    const file = evt.target.files[0];
+    document.querySelector("#showChooseImg").src = URL.createObjectURL(file)
+});
 
 let list = JSON.parse(window.localStorage.getItem("studentsList"))
 let id = JSON.parse(window.localStorage.getItem('editId'))
