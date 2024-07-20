@@ -4,7 +4,7 @@ document.getElementById("chooseImg").addEventListener("change", function(evt) {
     document.getElementById("showChoosenImg").src = URL.createObjectURL(evt.target.files[0]);
 });
 
-document.getElementById("search").addEventListener("input", function(evt) {
+document.getElementById("search").addEventListener("input", evt => {
     const value = evt.target.value.toLowerCase().trim();
     const arr = studentsArray.filter(item => item.name.includes(value) || item.email.includes(value));
     renderStudents(arr, document.getElementById("student-body"));
