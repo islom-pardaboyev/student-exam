@@ -17,12 +17,6 @@ function logOut() {
     }, 300);
 }
 
-function createStudent() {
-    setTimeout(function() {
-        window.location.href = "../html/createStudent.html";
-    }, 300);
-}
-
 function sortArray() {
     studentsArray.sort((a, b) => a.name.localeCompare(b.name));
     window.localStorage.setItem('studentsList', JSON.stringify(studentsArray));
